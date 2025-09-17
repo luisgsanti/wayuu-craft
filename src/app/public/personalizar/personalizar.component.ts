@@ -60,7 +60,7 @@ export class PersonalizarComponent {
       const patron = this.patronSeleccionado.patron.toLowerCase();
       const color = this.colorSeleccionado.toLowerCase();
 
-      this.imagenPreview = `../../../assets/opcionesMochila/${patron}-${color}.png`;
+      this.imagenPreview = `assets/opcionesMochila/${patron}-${color}.png`;
     }
   }
 
