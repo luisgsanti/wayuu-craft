@@ -1,0 +1,39 @@
+<header class="fixed w-full z-20 top-0 left-0 bg-red-200">
+    <nav class="container px-4 lg:max-w-[960px] flex flex-wrap items-center justify-between mx-auto py-2 ">
+        <a routerLink="/home" class="hover:scale-110 transition-all duration-150">
+            <img src="../../../assets/otras/logoHorizTransp.png" width="170px" height="70px" alt="Logo" class="w-[135px] h-[70px] rounded-lg">
+        </a>
+  
+        <div class="lg:order-2">     
+            <div class="flex">  
+                <ul class="hidden lg:flex lg:space-x-8 text-white mt-3">
+                    <h1 class="text-center text-4xl font-artistic text-red-400 drop-shadow-lg">
+                        WayuuCraft
+                    </h1>
+                </ul>
+                  
+                <button class="p-2 text-sm text-white rounded-lg lg:hidden" (click)="toggleMenu()">
+                    <svg *ngIf="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                    <svg *ngIf="isMenuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+  
+        <div [ngClass]="{'hidden': !isMenuOpen, 'flex flex-col items-center justify-center': isMenuOpen}" class="bordeTransparente px-4 items-center justify-between w-full lg:flex lg:w-auto lg:order-1">
+            <ul class="flex flex-col gap-1 lg:p-0 font-medium mb-2 lg:flex-row lg:mt-0 lg:border-0">
+                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a href="home#top" (click)="closeMenu()" class="text-red-400 text-lg font-ubuntu no-underline"
+                    >Inicio</a></li>
+                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a routerLink="/catalogo" (click)="closeMenu()" class="text-red-400 text-lg font-ubuntu no-underline"
+                    >Catalogo</a></li>
+                <li class="hover:bg-white/10 rounded-full px-4 py-1 transition text-center mt-2 lg:mt-0"><a routerLink="/personalizar" (click)="closeMenu()" class="text-red-400 text-lg font-ubuntu no-underline"
+                    >Personalizar</a></li>
+            </ul>
+            
+        </div>
+    </nav>
+</header>
+  

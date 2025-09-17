@@ -1,0 +1,140 @@
+<div class="bg-red-50 min-h-screen">
+  <div class="container mx-auto px-4 p-8">
+    <h1 class="text-center text-4xl md:text-6xl font-artistic text-red-400 drop-shadow-lg m-2">
+      Personaliza tu Mochila
+    </h1>
+    <br>
+    <hr>
+    <p class="text-center font-artistic text-2xl m-8">
+      Selecciona el <span class="text-red-500 font-bold">patrón</span> que deseas para tu mochila:
+    </p>
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center ">
+      <div class="relative flex w-80 flex-col rounded-xl bg-green-100 bg-clip-border text-gray-700 shadow-md mt-8">
+        <!-- Imagen en vez del fondo azul -->
+        <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl shadow-lg">
+          <img src="../../../assets/patrones/patron1.png" alt="Patrón geométrico"
+            class="w-full h-full object-cover border-2 border-green-500 rounded-xl" />
+        </div>
+  
+        <div class="p-6">
+          <h5
+            class="mb-2 block font-ubuntu text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased text-center">
+            Patrón #1
+          </h5>
+        </div>
+        <div class="p-6 pt-0 text-center">
+          <button data-ripple-light="true" type="button" (click)="seleccionarPatron(opciones[0])" [ngClass]="patronSeleccionado === opciones[0] 
+          ? 'bg-green-500 shadow-green-500/20 hover:shadow-green-500/40' 
+          : 'bg-blue-500 shadow-blue-500/20 hover:shadow-blue-500/40'"
+            class="select-none rounded-lg py-3 px-6 text-center align-middle text-sm font-ubuntu font-bold uppercase text-white shadow-md transition-all">
+            {{ patronSeleccionado === opciones[0] ? 'Seleccionado' : 'Seleccionar' }}
+          </button>
+        </div>
+      </div>
+  
+  
+      <div class="relative flex w-80 flex-col rounded-xl bg-violet-100 bg-clip-border text-gray-700 shadow-md mt-8">
+        <!-- Imagen en vez del fondo azul -->
+        <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl shadow-lg">
+          <img src="../../../assets/patrones/patron2.png" alt="Patrón geométrico"
+            class="w-full h-full object-cover border-2 border-violet-500 rounded-xl" />
+        </div>
+  
+        <div class="p-6">
+          <h5
+            class="mb-2 block font-ubuntu text-xl text-center font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+            Patrón #2
+          </h5>
+        </div>
+        <div class="p-6 pt-0 text-center">
+          <button data-ripple-light="true" type="button" (click)="seleccionarPatron(opciones[1])" [ngClass]="patronSeleccionado === opciones[1] 
+            ? 'bg-green-500 shadow-green-500/20 hover:shadow-green-500/40' 
+            : 'bg-blue-500 shadow-blue-500/20 hover:shadow-blue-500/40'"
+            class="select-none rounded-lg py-3 px-6 text-center align-middle font-ubuntu text-sm font-bold uppercase text-white shadow-md transition-all">
+            {{ patronSeleccionado === opciones[1] ? 'Seleccionado' : 'Seleccionar' }}
+          </button>
+        </div>
+      </div>
+  
+  
+      <div class="relative flex w-80 flex-col rounded-xl bg-red-100 bg-clip-border text-gray-700 shadow-md mt-8">
+        <!-- Imagen en vez del fondo azul -->
+        <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl shadow-lg">
+          <img src="../../../assets/patrones/patron3.png" alt="Patrón geométrico"
+            class="w-full h-full object-cover border-2 border-red-500 rounded-xl" />
+        </div>
+  
+        <div class="p-6">
+          <h5
+            class="mb-2 block font-ubuntu text-xl text-center font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+            Patrón #3
+          </h5>
+        </div>
+        <div class="p-6 pt-0 text-center">
+          <button data-ripple-light="true" type="button" (click)="seleccionarPatron(opciones[2])" [ngClass]="patronSeleccionado === opciones[2] 
+              ? 'bg-green-500 shadow-green-500/20 hover:shadow-green-500/40' 
+              : 'bg-blue-500 shadow-blue-500/20 hover:shadow-blue-500/40'"
+            class="select-none rounded-lg py-3 px-6 text-center align-middle font-ubuntu text-sm font-bold uppercase text-white shadow-md transition-all">
+            {{ patronSeleccionado === opciones[2] ? 'Seleccionado' : 'Seleccionar' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+    <div *ngIf="patronSeleccionado" #coloresSection>
+      <br><hr>
+      <p class="text-center font-artistic text-2xl m-8">
+        Selecciona el <span class="text-red-500 font-bold">color</span> que deseas para tu mochila:
+      </p>
+      
+      <div *ngIf="patronSeleccionado" class="flex flex-wrap justify-center gap-4">
+        <button *ngFor="let color of patronSeleccionado.colores" (click)="seleccionarColor(color)"
+          [ngStyle]="{'background-color': color.toLowerCase()}"
+          [ngClass]="colorSeleccionado === color ? 'border-4 border-green-500' : 'border-2 border-gray-300'"
+          class="w-12 h-12 rounded-full shadow-md hover:scale-110 transition">
+        </button>
+      
+      </div>
+    </div>
+  
+  
+  
+  
+    <div *ngIf="colorSeleccionado" #tamaniosSection>
+      <br><hr>
+      <p class="text-center font-artistic text-2xl m-8">
+        Selecciona el <span class="text-red-500 font-bold">tamaño</span> que deseas para tu mochila:
+      </p>
+      
+      <div *ngIf="patronSeleccionado" class="flex flex-wrap justify-center gap-4">
+        <button *ngFor="let tam of patronSeleccionado.medida" (click)="seleccionarMedida(tam)" [ngClass]="tamSeleccionado === tam 
+          ? 'bg-green-500 text-white shadow-green-500/20 hover:shadow-green-500/40' 
+          : 'bg-gray-200 text-gray-800 shadow-md hover:scale-105'"
+          class="px-4 py-2 rounded-md font-ubuntu transition-all">
+          {{ tam }}
+        </button>
+      </div>
+    </div>
+  
+  
+    
+  
+    <div *ngIf="tamSeleccionado" #previewSection>
+      <br><hr>
+      <p class="text-center font-artistic text-2xl m-8 font-bold">
+        Imagen previa del diseño seleccionado:
+      </p>
+      
+      <div *ngIf="imagenPreview" class="flex justify-center my-8">
+        <img [src]="imagenPreview" alt="Vista previa de mochila" class="w-64 h-64 object-cover rounded-xl shadow-lg">
+      </div>
+    </div>
+  
+  
+  
+  </div>
+  
+</div>
