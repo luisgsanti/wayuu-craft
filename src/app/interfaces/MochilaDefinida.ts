@@ -3,5 +3,7 @@ export interface MochilaDefinida {
   patron: string;
   color: string;
   medida: string;
-  precio?: number;     // opcional si manejas precios
+  precioCOP?: number;
+  precioUSD?: number;
+  imagen?: string; 
 }

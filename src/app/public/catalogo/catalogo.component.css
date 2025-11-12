@@ -1,0 +1,5 @@
+:host {
+  display: block;
+  background-color: #fff0f0; /* respaldo si Tailwind no carga el bg-red-50 */
+}
+

@@ -1,0 +1,55 @@
+<div class="bg-red-50 min-h-screen">
+  <div class="container mx-auto px-4 py-10">
+    <h1 class="text-center text-4xl md:text-6xl font-artistic text-red-400 drop-shadow-lg mb-10">
+      Catálogo de Mochilas Wayuu
+    </h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      <div
+        *ngFor="let mochila of mochilas; let i = index"
+        [ngClass]="colorCard(i)"
+        class="relative flex w-80 flex-col rounded-xl bg-clip-border text-gray-700 shadow-md hover:scale-[1.02] transition-transform duration-300"
+      >
+        <!-- Imagen -->
+        <div class="relative mx-4 -mt-6 h-48 overflow-hidden rounded-xl shadow-lg">
+          <img
+            [src]="mochila.imagen"
+            [alt]="mochila.patron"
+            class="w-full h-full object-cover border-2 border-white rounded-xl"
+          />
+        </div>
+
+        <div class="p-6 text-center">
+          <h5
+            class="mb-2 block font-ubuntu text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"
+          >
+            Tamaño: {{ mochila.medida }}
+          </h5>
+          <p class="text-sm text-gray-700">
+            <span class="font-bold text-gray-800">Color:</span> {{ mochila.color }}
+          </p>
+          <p class="text-gray-800 font-bold mt-2">
+            💰 {{ mochila.precioCOP | currency:'COP ':'symbol':'1.0-0' }}
+          </p>
+          <p class="text-gray-500 text-sm">USD {{ mochila.precioUSD }}</p>
+        </div>
+
+        <div class="p-6 pt-0 flex flex-col gap-2">
+          <button
+            (click)="verDetalles(mochila)"
+            class="rounded-lg py-2 text-sm font-ubuntu font-bold uppercase text-white bg-blue-500 hover:bg-blue-600 shadow-md transition-all"
+          >
+            Ver detalles
+          </button>
+
+          <button
+            (click)="realizarPedido(mochila)"
+            class="rounded-lg py-2 text-sm font-ubuntu font-bold uppercase text-white bg-green-500 hover:bg-green-600 shadow-md transition-all"
+          >
+            Pedir ahora
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
