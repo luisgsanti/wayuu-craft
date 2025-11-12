@@ -136,7 +136,7 @@ export class PersonalizarComponent {
       return;
     }
 
-    const numero = "573045493793";
+    const numero = "573246563871";
     const mensaje = `Hola, quisiera realizar un pedido de mochila:
   - Patrón: ${this.patronSeleccionado?.patron}
   - Color: ${this.colorSeleccionado}
