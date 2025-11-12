@@ -1,238 +1,213 @@
-<div class="bg-red-50 min-h-screen">
-  <div class="container mx-auto px-4 p-8">
-    <h1 class="text-center text-4xl md:text-6xl font-artistic text-red-400 drop-shadow-lg m-2">
+<!-- 🌺 Sección principal de personalización -->
+<div class="bg-gradient-to-b from-red-50 via-pink-50 to-red-100 min-h-screen py-10">
+  <div class="container mx-auto px-4">
+    <h1 class="text-center text-4xl md:text-6xl font-artistic text-red-500 drop-shadow-md mb-6">
       Personaliza tu Mochila
     </h1>
-    <br>
-    <hr>
-    <p class="text-center font-artistic text-2xl m-8">
+
+    <p class="text-center font-artistic text-2xl mb-10 text-gray-700">
       Selecciona el <span class="text-red-500 font-bold">patrón</span> que deseas para tu mochila:
     </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center ">
-      <div class="relative flex w-80 flex-col rounded-xl bg-green-100 bg-clip-border text-gray-700 shadow-md mt-8">
-        <!-- Imagen en vez del fondo azul -->
-        <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl shadow-lg">
-          <img src="assets/patrones/patron1.png" alt="Patrón geométrico"
-            class="w-full h-full object-cover border-2 border-green-500 rounded-xl" />
+    <!-- 🌸 Patrones -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+      <!-- Patrón #1 -->
+      <div
+        class="relative flex w-80 flex-col rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 border border-red-200 hover:scale-105">
+        <div class="relative mx-4 -mt-6 h-44 overflow-hidden rounded-2xl shadow-lg">
+          <img src="assets/patrones/patron1.png" alt="Patrón 1"
+            class="w-full h-full object-cover border-2 border-pink-400 rounded-2xl" />
         </div>
-
-        <div class="p-6">
-          <h5
-            class="mb-2 block font-ubuntu text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased text-center">
-            Patrón #1
-          </h5>
-        </div>
-        <div class="p-6 pt-0 text-center">
-          <button data-ripple-light="true" type="button" (click)="seleccionarPatron(opciones[0])" [ngClass]="patronSeleccionado === opciones[0] 
-          ? 'bg-green-500 shadow-green-500/20 hover:shadow-green-500/40' 
-          : 'bg-blue-500 shadow-blue-500/20 hover:shadow-blue-500/40'"
-            class="select-none rounded-lg py-3 px-6 text-center align-middle text-sm font-ubuntu font-bold uppercase text-white shadow-md transition-all">
+        <div class="p-6 text-center">
+          <h5 class="font-ubuntu text-xl font-semibold text-gray-800 mb-3">Patrón #1</h5>
+          <button
+            (click)="seleccionarPatron(opciones[0])"
+            [ngClass]="patronSeleccionado === opciones[0]
+              ? 'bg-green-500 shadow-green-500/30 hover:shadow-green-500/50'
+              : 'bg-red-400 shadow-red-400/20 hover:shadow-red-400/40'"
+            class="select-none rounded-lg py-3 px-6 text-center font-ubuntu text-sm font-bold uppercase text-white shadow-md transition-all">
             {{ patronSeleccionado === opciones[0] ? 'Seleccionado' : 'Seleccionar' }}
           </button>
         </div>
       </div>
 
-
-      <div class="relative flex w-80 flex-col rounded-xl bg-violet-100 bg-clip-border text-gray-700 shadow-md mt-8">
-        <!-- Imagen en vez del fondo azul -->
-        <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl shadow-lg">
-          <img src="assets/patrones/patron2.png" alt="Patrón geométrico"
-            class="w-full h-full object-cover border-2 border-violet-500 rounded-xl" />
+      <!-- Patrón #2 -->
+      <div
+        class="relative flex w-80 flex-col rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 border border-red-200 hover:scale-105">
+        <div class="relative mx-4 -mt-6 h-44 overflow-hidden rounded-2xl shadow-lg">
+          <img src="assets/patrones/patron2.png" alt="Patrón 2"
+            class="w-full h-full object-cover border-2 border-violet-400 rounded-2xl" />
         </div>
-
-        <div class="p-6">
-          <h5
-            class="mb-2 block font-ubuntu text-xl text-center font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-            Patrón #2
-          </h5>
-        </div>
-        <div class="p-6 pt-0 text-center">
-          <button data-ripple-light="true" type="button" (click)="seleccionarPatron(opciones[1])" [ngClass]="patronSeleccionado === opciones[1] 
-            ? 'bg-green-500 shadow-green-500/20 hover:shadow-green-500/40' 
-            : 'bg-blue-500 shadow-blue-500/20 hover:shadow-blue-500/40'"
-            class="select-none rounded-lg py-3 px-6 text-center align-middle font-ubuntu text-sm font-bold uppercase text-white shadow-md transition-all">
+        <div class="p-6 text-center">
+          <h5 class="font-ubuntu text-xl font-semibold text-gray-800 mb-3">Patrón #2</h5>
+          <button
+            (click)="seleccionarPatron(opciones[1])"
+            [ngClass]="patronSeleccionado === opciones[1]
+              ? 'bg-green-500 shadow-green-500/30 hover:shadow-green-500/50'
+              : 'bg-red-400 shadow-red-400/20 hover:shadow-red-400/40'"
+            class="select-none rounded-lg py-3 px-6 text-center font-ubuntu text-sm font-bold uppercase text-white shadow-md transition-all">
             {{ patronSeleccionado === opciones[1] ? 'Seleccionado' : 'Seleccionar' }}
           </button>
         </div>
       </div>
 
-
-      <div class="relative flex w-80 flex-col rounded-xl bg-red-100 bg-clip-border text-gray-700 shadow-md mt-8">
-        <!-- Imagen en vez del fondo azul -->
-        <div class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl shadow-lg">
-          <img src="assets/patrones/patron3.png" alt="Patrón geométrico"
-            class="w-full h-full object-cover border-2 border-red-500 rounded-xl" />
+      <!-- Patrón #3 -->
+      <div
+        class="relative flex w-80 flex-col rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 border border-red-200 hover:scale-105">
+        <div class="relative mx-4 -mt-6 h-44 overflow-hidden rounded-2xl shadow-lg">
+          <img src="assets/patrones/patron3.png" alt="Patrón 3"
+            class="w-full h-full object-cover border-2 border-red-400 rounded-2xl" />
         </div>
-
-        <div class="p-6">
-          <h5
-            class="mb-2 block font-ubuntu text-xl text-center font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
-            Patrón #3
-          </h5>
-        </div>
-        <div class="p-6 pt-0 text-center">
-          <button data-ripple-light="true" type="button" (click)="seleccionarPatron(opciones[2])" [ngClass]="patronSeleccionado === opciones[2] 
-              ? 'bg-green-500 shadow-green-500/20 hover:shadow-green-500/40' 
-              : 'bg-blue-500 shadow-blue-500/20 hover:shadow-blue-500/40'"
-            class="select-none rounded-lg py-3 px-6 text-center align-middle font-ubuntu text-sm font-bold uppercase text-white shadow-md transition-all">
+        <div class="p-6 text-center">
+          <h5 class="font-ubuntu text-xl font-semibold text-gray-800 mb-3">Patrón #3</h5>
+          <button
+            (click)="seleccionarPatron(opciones[2])"
+            [ngClass]="patronSeleccionado === opciones[2]
+              ? 'bg-green-500 shadow-green-500/30 hover:shadow-green-500/50'
+              : 'bg-red-400 shadow-red-400/20 hover:shadow-red-400/40'"
+            class="select-none rounded-lg py-3 px-6 text-center font-ubuntu text-sm font-bold uppercase text-white shadow-md transition-all">
             {{ patronSeleccionado === opciones[2] ? 'Seleccionado' : 'Seleccionar' }}
           </button>
         </div>
       </div>
     </div>
 
-
-
-    <div *ngIf="patronSeleccionado" #coloresSection>
-      <br>
-      <hr>
-      <p class="text-center font-artistic text-2xl m-8">
+    <!-- 🎨 Colores -->
+    <div *ngIf="patronSeleccionado" #coloresSection class="mt-16">
+      <hr class="border-red-200 mb-8">
+      <p class="text-center font-artistic text-2xl mb-10 text-gray-700">
         Selecciona el <span class="text-red-500 font-bold">color</span> que deseas para tu mochila:
       </p>
 
-      <div *ngIf="patronSeleccionado" class="flex flex-wrap justify-center gap-4">
-        <button *ngFor="let color of patronSeleccionado.colores" (click)="seleccionarColor(color)"
+      <div class="flex flex-wrap justify-center gap-5">
+        <button *ngFor="let color of patronSeleccionado?.colores"
+          (click)="seleccionarColor(color)"
           [ngStyle]="{'background-color': color.toLowerCase()}"
-          [ngClass]="colorSeleccionado === color ? 'border-4 border-green-500' : 'border-2 border-gray-300'"
-          class="w-12 h-12 rounded-full shadow-md hover:scale-110 transition">
+          [ngClass]="colorSeleccionado === color ? 'ring-4 ring-green-400 scale-110' : 'ring-2 ring-gray-300'"
+          class="w-14 h-14 rounded-full shadow-md transition-all duration-300 hover:scale-110">
         </button>
-
       </div>
     </div>
 
+    <!-- 📏 Tamaños -->
+    <div *ngIf="colorSeleccionado" #tamaniosSection class="mt-16">
+      <hr class="border-red-200 mb-8">
+      <p class="text-center font-artistic text-2xl mb-10 text-gray-700">
+        Selecciona el <span class="text-red-500 font-bold">tamaño</span> que deseas:
+      </p>
 
+      <div class="flex flex-wrap justify-center gap-5">
+        <button *ngFor="let precio of patronSeleccionado?.precios"
+          (click)="seleccionarMedida(precio.tamano)"
+          [ngClass]="tamSeleccionado === precio.tamano
+            ? 'bg-green-500 text-white shadow-green-500/30 hover:shadow-green-500/50'
+            : 'bg-gray-100 text-gray-800 hover:bg-gray-200'"
+          class="px-6 py-3 rounded-xl font-ubuntu font-semibold shadow-md transition-all duration-300">
+          {{ precio.tamano }} <br>
+          <small class="text-sm font-normal">{{ precio.cop | currency:'COP':'symbol-narrow':'1.0' }}</small>
+        </button>
+      </div>
 
+      <div *ngIf="tamSeleccionado" class="text-center mt-6">
+        <p class="text-lg font-semibold text-gray-700">
+          💰 Precio: <span class="text-green-600">{{ costoMochila | currency:'COP' }}</span>
+          ({{ costoMochilaUSD }} USD)
+        </p>
+      </div>
+    </div>
 
-    <div *ngIf="colorSeleccionado" #tamaniosSection>
-  <hr>
-  <p class="text-center font-artistic text-2xl m-8">
-    Selecciona el <span class="text-red-500 font-bold">tamaño</span> que deseas:
-  </p>
-
-  <div *ngIf="patronSeleccionado" class="flex flex-wrap justify-center gap-4">
-    <button *ngFor="let precio of patronSeleccionado.precios"
-      (click)="seleccionarMedida(precio.tamano)"
-      [ngClass]="tamSeleccionado === precio.tamano 
-        ? 'bg-green-500 text-white shadow-green-500/20 hover:shadow-green-500/40' 
-        : 'bg-gray-200 text-gray-800 shadow-md hover:scale-105'"
-      class="px-4 py-2 rounded-md font-ubuntu transition-all">
-      {{ precio.tamano }} <br> 
-      <small>{{ precio.cop | currency:'COP':'symbol-narrow':'1.0' }}</small>
-    </button>
-  </div>
-
-  <div *ngIf="tamSeleccionado" class="text-center mt-4">
-    <p class="text-lg font-semibold">💰 Precio: {{ costoMochila | currency:'COP' }} ({{ costoMochilaUSD }} USD)</p>
-  </div>
-</div>
-
-
-
-
-
-    <div *ngIf="tamSeleccionado" #previewSection>
-      <br>
-      <hr>
-      <p class="text-center font-artistic text-2xl m-8 font-bold">
+    <!-- 🖼️ Preview -->
+    <div *ngIf="tamSeleccionado" #previewSection class="mt-16 mb-10">
+      <hr class="border-red-200 mb-8">
+      <p class="text-center font-artistic text-2xl mb-10 text-gray-700 font-bold">
         Imagen previa del diseño seleccionado:
       </p>
 
       <div *ngIf="imagenPreview" class="flex justify-center my-8">
-        <img [src]="imagenPreview" alt="Vista previa de mochila" class="w-64 h-64 object-cover rounded-xl shadow-lg">
+        <img [src]="imagenPreview" alt="Vista previa de mochila"
+          class="w-64 h-64 object-cover rounded-3xl shadow-2xl border-4 border-white ring-2 ring-red-200">
       </div>
+
+      <button (click)="abrirModal()"
+        class="flex items-center justify-center gap-3 mx-auto bg-green-500 hover:bg-green-600 text-white font-ubuntu font-bold px-6 py-3 rounded-lg shadow-lg transition-all duration-300">
+        <i class="fab fa-whatsapp text-xl"></i>
+        Realizar pedido
+      </button>
     </div>
-
-
-    <button (click)="abrirModal()" *ngIf="tamSeleccionado"
-      class="flex items-center font-ubuntu justify-center gap-2 mt-5 bg-green-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-600 mx-auto">
-      <i class="fab fa-whatsapp text-xl"></i>
-      Realizar pedido
-    </button>
-
-
-
   </div>
-
 </div>
 
 
-<!-- Modal -->
-<div *ngIf="mostrarModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-  <div class="bg-white rounded-2xl shadow-lg w-11/12 max-w-4xl p-6 relative max-h-[80vh] overflow-y-auto">
-
-
+<!-- 🌈 Modal personalizado -->
+<div *ngIf="mostrarModal" class="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50">
+  <div class="bg-gradient-to-br from-white via-red-50 to-pink-100 rounded-3xl shadow-2xl w-11/12 max-w-5xl my-10 p-8 relative max-h-[95vh] overflow-y-auto animate-fadeIn">
+    
     <!-- Botón cerrar -->
-    <button (click)="cerrarModal()" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl">✕</button>
+    <button (click)="cerrarModal()"
+      class="absolute top-4 right-4 bg-white text-gray-700 hover:bg-red-100 hover:text-red-500 w-10 h-10 flex items-center justify-center rounded-full shadow-md transition-all duration-300">
+      ✕
+    </button>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       <!-- Imagen -->
-      <div class="flex flex-col items-center justify-center h-full gap-3">
-        <!-- Imagen -->
-        <img [src]="imagenPreview" alt="Mochila seleccionada" class="w-56 h-56 rounded-xl shadow-md object-cover">
+      <div class="flex flex-col items-center justify-center gap-5">
+        <div class="relative">
+          <img [src]="imagenPreview" alt="Mochila seleccionada" class="w-64 h-64 rounded-2xl shadow-xl object-cover border-4 border-white" />
+          <div class="absolute inset-0 rounded-2xl ring-4 ring-pink-300/50 animate-pulse"></div>
+        </div>
 
-        <!-- Botón descargar -->
         <a [href]="imagenPreview" download="mochila-disenada.png"
-          class="mt-2 bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-md transition">
-          Descargar diseño
+          class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-semibold px-6 py-2 rounded-lg shadow-md transition-all hover:scale-105">
+          <i class="fa-solid fa-download mr-1"></i> Descargar diseño
         </a>
 
-        <!-- Mensaje -->
         <p class="text-center text-gray-600 text-sm font-ubuntu px-4">
-          Descargue el diseño elaborado para posteriormente enviarlo al WhatsApp con el pedido.
+          Descargue el diseño para adjuntarlo al pedido en WhatsApp.
         </p>
       </div>
 
-
-
       <!-- Detalles -->
       <div>
-        <h2 class="text-2xl font-ubuntu font-bold text-red-500 mb-4">Detalles del pedido</h2>
+        <h2 class="text-3xl font-artistic text-red-400 mb-6 text-center drop-shadow-md">🧵 Detalles del pedido</h2>
 
-        <ul class="text-gray-700 space-y-1 mb-4 font-ubuntu">
-          <li><span class="font-bold">Patrón:</span> {{patronSeleccionado?.patron}}</li>
-          <li><span class="font-bold">Color:</span> {{colorSeleccionado}}</li>
-          <li><span class="font-bold">Tamaño:</span> {{tamSeleccionado}}</li>
-          <li><span class="font-bold">Costo:</span> {{costoMochila | currency:'COP ':'symbol':'1.0-0'}}</li>
+        <ul class="text-gray-700 mb-6 font-ubuntu bg-white/70 rounded-xl p-4 shadow-sm space-y-1">
+          <li><span class="font-bold text-red-500">Patrón:</span> {{patronSeleccionado?.patron}}</li>
+          <li><span class="font-bold text-red-500">Color:</span> {{colorSeleccionado}}</li>
+          <li><span class="font-bold text-red-500">Tamaño:</span> {{tamSeleccionado}}</li>
+          <li><span class="font-bold text-red-500">Costo:</span> {{costoMochila | currency:'COP ':'symbol':'1.0-0'}} ({{costoMochilaUSD}} USD)</li>
         </ul>
 
-        <!-- Formulario -->
         <form #formPedido="ngForm" class="space-y-3 font-ubuntu">
           <input type="text" [(ngModel)]="datosUsuario.nombre" name="nombre" placeholder="Nombre completo" required
-            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
+            class="w-full px-4 py-2 border-2 border-transparent rounded-lg focus:ring-2 focus:ring-red-300 focus:border-red-400 transition-all" />
 
           <input type="tel" [(ngModel)]="datosUsuario.telefono" name="telefono" placeholder="Teléfono" required
-            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
+            class="w-full px-4 py-2 border-2 border-transparent rounded-lg focus:ring-2 focus:ring-red-300 focus:border-red-400 transition-all" />
 
           <input type="text" [(ngModel)]="datosUsuario.direccion" name="direccion" placeholder="Dirección" required
-            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
+            class="w-full px-4 py-2 border-2 border-transparent rounded-lg focus:ring-2 focus:ring-red-300 focus:border-red-400 transition-all" />
 
-          <input type="text" [(ngModel)]="datosUsuario.ciudad" name="ciudad" placeholder="Ciudad" required
-            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
+          <div class="grid grid-cols-2 gap-3">
+            <input type="text" [(ngModel)]="datosUsuario.ciudad" name="ciudad" placeholder="Ciudad" required
+              class="px-4 py-2 border-2 border-transparent rounded-lg focus:ring-2 focus:ring-red-300 focus:border-red-400 transition-all" />
 
-          <input type="text" [(ngModel)]="datosUsuario.departamento" name="departamento" placeholder="Departamento"
-            required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
+            <input type="text" [(ngModel)]="datosUsuario.departamento" name="departamento" placeholder="Departamento" required
+              class="px-4 py-2 border-2 border-transparent rounded-lg focus:ring-2 focus:ring-red-300 focus:border-red-400 transition-all" />
+          </div>
 
           <input type="text" [(ngModel)]="datosUsuario.pais" name="pais" placeholder="País" required
-            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
+            class="w-full px-4 py-2 border-2 border-transparent rounded-lg focus:ring-2 focus:ring-red-300 focus:border-red-400 transition-all" />
         </form>
 
+        <div class="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <button (click)="enviarPedidoWhatsApp(formPedido)" [disabled]="!formPedido.valid"
+            class="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-lg shadow-md transition-all hover:scale-105 disabled:opacity-50 w-full md:w-auto">
+            <i class="fab fa-whatsapp text-xl"></i> Confirmar y Enviar
+          </button>
+
+          <div id="paypal-button-container" class="w-full md:w-auto"></div>
+        </div>
       </div>
     </div>
-
-    <!-- Botón enviar a WhatsApp -->
-    <div class="mt-6 flex flex-col md:flex-row justify-end gap-4">
-      <button (click)="enviarPedidoWhatsApp(formPedido)" 
-  [disabled]="!formPedido.valid"
-  class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-5 py-3 rounded-lg shadow-md transition disabled:opacity-50">
-  <i class="fab fa-whatsapp"></i> Confirmar y Enviar
-</button>
-
-
-      <!-- Contenedor PayPal -->
-      <div id="paypal-button-container" class="w-full md:w-auto"></div>
-    </div>
-
   </div>
 </div>
