@@ -1,10 +1,13 @@
 import { MochilaDefinida } from '../interfaces/MochilaDefinida';
 
 export const MOCHILAS_DEFINIDAS: MochilaDefinida[] = [
-  { id: 1, patron: 'Liso', color: 'Verde', medida: 'Mediano', precio: 50000 },
-  { id: 2, patron: 'Liso', color: 'Azul', medida: 'Mediano', precio: 70000 },
-  { id: 3, patron: 'Liso', color: 'Amarillo', medida: 'Grande', precio: 80000},
-  { id: 4, patron: 'Floral', color: 'Multicolor', medida: 'Grande', precio: 100000},
-  { id: 5, patron: 'Gometrico', color: 'Negro', medida: 'Mediano', precio: 90000},
-
+  { id: 101, patron: 'Geometrico', color: 'Multicolor', medida: 'Pequeño', precio: 250000},
+  { id: 102, patron: 'Geometrico', color: 'Multicolor', medida: 'Pequeño', precio: 250000},
+  { id: 103, patron: 'Geometrico', color: 'Multicolor', medida: 'Pequeño', precio: 250000},
+  { id: 201, patron: 'Geometrico', color: 'Multicolor', medida: 'Mediano', precio: 280000},
+  { id: 202, patron: 'Geometrico', color: 'Multicolor', medida: 'Mediano', precio: 280000},
+  { id: 203, patron: 'Geometrico', color: 'Multicolor', medida: 'Mediano', precio: 280000},
+  { id: 301, patron: 'Geometrico', color: 'Multicolor', medida: 'Grande', precio: 320000},
+  { id: 302, patron: 'Geometrico', color: 'Multicolor', medida: 'Grande', precio: 320000},
+  { id: 303, patron: 'Geometrico', color: 'Multicolor', medida: 'Grande', precio: 320000},
 ];

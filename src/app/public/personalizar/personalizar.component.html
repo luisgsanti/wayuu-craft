@@ -105,21 +105,28 @@
 
 
     <div *ngIf="colorSeleccionado" #tamaniosSection>
-      <br>
-      <hr>
-      <p class="text-center font-artistic text-2xl m-8">
-        Selecciona el <span class="text-red-500 font-bold">tamaño</span> que deseas para tu mochila:
-      </p>
+  <hr>
+  <p class="text-center font-artistic text-2xl m-8">
+    Selecciona el <span class="text-red-500 font-bold">tamaño</span> que deseas:
+  </p>
 
-      <div *ngIf="patronSeleccionado" class="flex flex-wrap justify-center gap-4">
-        <button *ngFor="let tam of patronSeleccionado.medida" (click)="seleccionarMedida(tam)" [ngClass]="tamSeleccionado === tam 
-          ? 'bg-green-500 text-white shadow-green-500/20 hover:shadow-green-500/40' 
-          : 'bg-gray-200 text-gray-800 shadow-md hover:scale-105'"
-          class="px-4 py-2 rounded-md font-ubuntu transition-all">
-          {{ tam }}
-        </button>
-      </div>
-    </div>
+  <div *ngIf="patronSeleccionado" class="flex flex-wrap justify-center gap-4">
+    <button *ngFor="let precio of patronSeleccionado.precios"
+      (click)="seleccionarMedida(precio.tamano)"
+      [ngClass]="tamSeleccionado === precio.tamano 
+        ? 'bg-green-500 text-white shadow-green-500/20 hover:shadow-green-500/40' 
+        : 'bg-gray-200 text-gray-800 shadow-md hover:scale-105'"
+      class="px-4 py-2 rounded-md font-ubuntu transition-all">
+      {{ precio.tamano }} <br> 
+      <small>{{ precio.cop | currency:'COP':'symbol-narrow':'1.0' }}</small>
+    </button>
+  </div>
+
+  <div *ngIf="tamSeleccionado" class="text-center mt-4">
+    <p class="text-lg font-semibold">💰 Precio: {{ costoMochila | currency:'COP' }} ({{ costoMochilaUSD }} USD)</p>
+  </div>
+</div>
+
 
 
 
@@ -149,7 +156,7 @@
 
 </div>
 
-<!-- Modal -->
+
 <!-- Modal -->
 <div *ngIf="mostrarModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
   <div class="bg-white rounded-2xl shadow-lg w-11/12 max-w-4xl p-6 relative max-h-[80vh] overflow-y-auto">
@@ -191,29 +198,37 @@
         </ul>
 
         <!-- Formulario -->
-        <form class="space-y-3 font font-ubuntu">
-          <input type="text" [(ngModel)]="datosUsuario.nombre" name="nombre" placeholder="Nombre completo"
+        <form #formPedido="ngForm" class="space-y-3 font-ubuntu">
+          <input type="text" [(ngModel)]="datosUsuario.nombre" name="nombre" placeholder="Nombre completo" required
             class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
-          <input type="tel" [(ngModel)]="datosUsuario.telefono" name="telefono" placeholder="Teléfono"
+
+          <input type="tel" [(ngModel)]="datosUsuario.telefono" name="telefono" placeholder="Teléfono" required
             class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
-          <input type="text" [(ngModel)]="datosUsuario.direccion" name="direccion" placeholder="Dirección"
+
+          <input type="text" [(ngModel)]="datosUsuario.direccion" name="direccion" placeholder="Dirección" required
             class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
-          <input type="text" [(ngModel)]="datosUsuario.ciudad" name="ciudad" placeholder="Ciudad"
+
+          <input type="text" [(ngModel)]="datosUsuario.ciudad" name="ciudad" placeholder="Ciudad" required
             class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
+
           <input type="text" [(ngModel)]="datosUsuario.departamento" name="departamento" placeholder="Departamento"
-            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
-          <input type="text" [(ngModel)]="datosUsuario.pais" name="pais" placeholder="País"
+            required class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
+
+          <input type="text" [(ngModel)]="datosUsuario.pais" name="pais" placeholder="País" required
             class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-400" />
         </form>
+
       </div>
     </div>
 
     <!-- Botón enviar a WhatsApp -->
     <div class="mt-6 flex flex-col md:flex-row justify-end gap-4">
-      <button (click)="enviarPedidoWhatsApp()"
-        class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-5 py-3 rounded-lg shadow-md transition">
-        <i class="fab fa-whatsapp"></i> Confirmar y Enviar
-      </button>
+      <button (click)="enviarPedidoWhatsApp(formPedido)" 
+  [disabled]="!formPedido.valid"
+  class="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-5 py-3 rounded-lg shadow-md transition disabled:opacity-50">
+  <i class="fab fa-whatsapp"></i> Confirmar y Enviar
+</button>
+
 
       <!-- Contenedor PayPal -->
       <div id="paypal-button-container" class="w-full md:w-auto"></div>

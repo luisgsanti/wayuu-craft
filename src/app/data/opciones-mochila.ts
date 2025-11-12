@@ -4,17 +4,28 @@ export const OPCIONES_MOCHILA: OpcionesMochila[] = [
   {
     patron: 'Patron1',
     colores: ['Green', 'Orange', 'Gray'],
-    medida: ['Pequeño', 'Mediano', 'Grande'],
+    precios: [
+      { tamano: 'Pequeño', cop: 300000, usd: 97.04 },
+      { tamano: 'Mediano', cop: 330000, usd: 106.74 },
+      { tamano: 'Grande', cop: 370000, usd: 119.68 },
+    ],
   },
   {
     patron: 'Patron2',
     colores: ['Green', 'Violet', 'Red'],
-    medida: ['Pequeño', 'Mediano', 'Grande'],
+    precios: [
+      { tamano: 'Pequeño', cop: 300000, usd: 97.04 },
+      { tamano: 'Mediano', cop: 330000, usd: 106.74 },
+      { tamano: 'Grande', cop: 370000, usd: 119.68 },
+    ],
   },
   {
     patron: 'Patron3',
     colores: ['Red', 'Violet', 'Brown', 'Green', 'Yellow'],
-    medida: ['Pequeño', 'Mediano', 'Grande'],
+    precios: [
+      { tamano: 'Pequeño', cop: 300000, usd: 97.04 },
+      { tamano: 'Mediano', cop: 330000, usd: 106.74 },
+      { tamano: 'Grande', cop: 370000, usd: 119.68 },
+    ],
   },
-
 ];
